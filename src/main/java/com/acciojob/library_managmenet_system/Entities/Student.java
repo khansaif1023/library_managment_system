@@ -17,9 +17,14 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int rollId;
+
+    @Column(nullable=false,unique = true)
     private String name;
+
     private String branch;
+
     private  double cgpa;
+
     private String emailId;
 
 }
