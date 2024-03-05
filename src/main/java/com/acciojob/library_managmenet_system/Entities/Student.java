@@ -18,13 +18,15 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int rollId;
 
-    @Column(nullable=false,unique = true)
+    @Column(nullable = false)
     private String name;
 
     private String branch;
 
-    private  double cgpa;
+    @Column(nullable = false)
+    private  Double cgpa;
 
+    @Column(unique = true)
     private String emailId;
 
 }

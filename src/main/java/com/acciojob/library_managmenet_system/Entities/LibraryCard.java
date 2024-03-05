@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name="card_info")
@@ -19,8 +20,16 @@ public class LibraryCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cardNo;
+
     private CardStatus cardStatus;
+
     private int noOfBooksIssued;
-    private LocalDate vilidity;
+
+    private Date validity;
+
+
+    @JoinColumn
+    @OneToOne
+    private Student student;
 
 }
